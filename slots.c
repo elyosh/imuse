@@ -516,4 +516,4 @@ void ImSlots_DrvSetPitchBend(imuse_t* im, int outChannel, int pitchBendWire) {
 }
 
 /* The DOS debug overlay is unsupported. */
-void ImSlots_Debug(imuse_t* im) {}
+void ImSlots_Debug(imuse_t* im) { (void)im; }

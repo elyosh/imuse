@@ -1,7 +1,7 @@
-#include "internal/synth_queue.h"
 #include <imuse/xwing.h>
 #include <stdlib.h>
 #ifdef HAVE_MT32EMU
+#include "internal/synth_queue.h"
 #include <mt32emu/mt32emu.h>
 
 typedef struct ImMt32 {

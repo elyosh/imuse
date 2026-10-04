@@ -22,6 +22,7 @@ int ImGroups_Init(imuse_t* im) {
 }
 
 int ImGroups_Deinit(imuse_t* im) {
+	(void)im;
 	/* No teardown needed — arrays live in BSS and will be re-zeroed on
 	 * next Init. Matches the DOS binary's bare `return 0`. */
 	return 0;

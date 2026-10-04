@@ -123,11 +123,13 @@ int ImWave_GetParam(imuse_t* im, intptr_t soundId, int param) {
 
 /* Hooks: -2 = unsupported on the wave side. Args ignored. */
 void ImWave_SetHook(imuse_t* im, intptr_t soundId, uint32_t hookId) {
+	(void)im;
 	(void)soundId;
 	(void)hookId;
 }
 
 int ImWave_GetHook(imuse_t* im, intptr_t soundId) {
+	(void)im;
 	(void)soundId;
 	return -2;
 }

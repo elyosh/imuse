@@ -17,6 +17,7 @@ typedef struct ListNode {
 } ListNode;
 
 int ImUtils_Clamp(imuse_t* im, int v, int min, int max) {
+	(void)im;
 	if (v < min)
 		return min;
 	if (v > max)
@@ -25,6 +26,7 @@ int ImUtils_Clamp(imuse_t* im, int v, int min, int max) {
 }
 
 int ImUtils_WrapSemitones(imuse_t* im, int v, int min, int max) {
+	(void)im;
 	while (v < min)
 		v += 12;
 	while (v > max)
@@ -51,10 +53,12 @@ void ImUtils_ListAddItem(imuse_t* im, void* headPtr, void* item) {
 }
 
 uint32_t ImUtils_Swap32(imuse_t* im, const unsigned char* buf) {
+	(void)im;
 	return ((uint32_t)buf[0] << 24) | ((uint32_t)buf[1] << 16) | ((uint32_t)buf[2] << 8) | (uint32_t)buf[3];
 }
 
 int ImUtils_CheckHookValue(imuse_t* im, int* playerHookPtr, int trackHookId) {
+	(void)im;
 	if (trackHookId) {
 		if (trackHookId == *playerHookPtr) {
 			*playerHookPtr = 0;

@@ -519,6 +519,7 @@ int ImDispatch_SwitchStream(imuse_t* im, intptr_t oldSoundId, intptr_t newSoundI
 /* ===== Fade-volume updates ===== */
 
 int ImDispatch_UpdateFadeSlope(imuse_t* im, ImWaveDispatch* d) {
+	(void)im;
 	/* Fade-IN volume for the NEW stream this mix iteration.
 	 * fadeVol is an 8.16 fixed-point counter: high byte = how
 	 * much "old sound" remains; (127 - high_byte) = matching
@@ -536,6 +537,7 @@ int ImDispatch_UpdateFadeSlope(imuse_t* im, ImWaveDispatch* d) {
 }
 
 int ImDispatch_UpdateFadeMixVolume(imuse_t* im, ImWaveDispatch* d, int remainingFade) {
+	(void)im;
 	/* Fade-OUT volume for the OLD stream this iteration. */
 	int fadeOutVol = (d->sound->effVol * ((d->fadeVol >> 16) + 1)) >> 7;
 

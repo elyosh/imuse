@@ -45,7 +45,10 @@ int ImSeq_Init(imuse_t* im) {
 	return 0;
 }
 
-int ImSeq_Deinit(imuse_t* im) { return 0; }
+int ImSeq_Deinit(imuse_t* im) {
+	(void)im;
+	return 0;
+}
 
 ImSeqData* ImSeq_GetSeqDataForPlayerId(imuse_t* im, int playerId) {
 	/* No bounds check — caller guarantees 0 or 1. */
@@ -132,6 +135,7 @@ void ImSeq_SetTicksPerBeat(imuse_t* im, ImSeqData* seq, int ticksPerBeat, int be
 }
 
 int ImSeq_GetTimeParam(imuse_t* im, ImSeqData* seq, int param) {
+	(void)im;
 	switch (param) {
 		case IMUSE_PARAM_MIDI_CHUNK:
 			return seq->seqIndex + 1;
@@ -151,6 +155,7 @@ int ImSeq_GetTimeParam(imuse_t* im, ImSeqData* seq, int param) {
 /* ===== Normalization + chunk positioning ===== */
 
 int ImSeq_FixupSoundTick(imuse_t* im, ImSeqData* data, unsigned int value) {
+	(void)im;
 	/* Wrap tick bits into (0, ticksPerBeat); on each wrap,
 	 * increment the beat bits (offset 16). Beat bits wrap into
 	 * (0, beatsPerMeasure-shifted); on each wrap, increment the
@@ -286,6 +291,7 @@ malformed:
 }
 
 int ImSeq_MidiGetTickDelta(imuse_t* im, ImSeqData* playerData, int prevTick, int tick) {
+	(void)im;
 	/* Linearise each packed position as
 	 *   total = bpm_shifted * tpb * measure + tpb * beat + tick
 	 * NOTE: beatsPerMeasure stored pre-shifted <<16, so the

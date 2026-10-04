@@ -41,6 +41,7 @@ int ImStreamer_Init(imuse_t* im) {
 }
 
 int ImStreamer_Deinit(imuse_t* im) {
+	(void)im;
 	/* Static slot storage + host-owned ring buffers: no work. */
 	return 0;
 }
@@ -166,6 +167,7 @@ int ImStreamer_ProcessStreams(imuse_t* im) {
 /* ===== Consumer reads ===== */
 
 int ImStreamer_GetAvailableBytes(imuse_t* im, ImWaveStream* stream) {
+	(void)im;
 	/* (loadIndex - readIndex) mod bufFreeSize. loadIndex is
 	 * always at least 1 byte behind readIndex when the ring is
 	 * "full" (see sentinel above), so the negative-wrap case
@@ -239,11 +241,15 @@ int ImStreamer_SetLoadIndex(imuse_t* im, ImWaveStream* stream, unsigned int offs
 /* ===== VOC loop triggers ===== */
 
 void ImStreamer_SetLoopFlag(imuse_t* im, ImWaveStream* stream, int offset) {
+	(void)im;
 	stream->vocLoopFlag = 1;
 	stream->vocLoopTriggerOffset = offset;
 }
 
-void ImStreamer_RemoveLoopFlag(imuse_t* im, ImWaveStream* stream) { stream->vocLoopFlag = 0; }
+void ImStreamer_RemoveLoopFlag(imuse_t* im, ImWaveStream* stream) {
+	(void)im;
+	stream->vocLoopFlag = 0;
+}
 
 /* ===== IMUSE_CMD_QUERY_STREAM reporter ===== */
 

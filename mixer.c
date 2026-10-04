@@ -76,6 +76,7 @@ int ImMixer_Init(imuse_t* im) {
 }
 
 int ImMixer_Deinit(imuse_t* im) {
+	(void)im;
 	/* Static LUT + per-frame pointers are the only state; no
 	 * teardown needed. Kept as an API slot for symmetry. */
 	return 0;

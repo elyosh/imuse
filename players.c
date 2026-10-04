@@ -901,4 +901,4 @@ void ImPlayers_HandleChannelDetuneChange(imuse_t* im, ImMidiPlayer* player, ImMi
 }
 
 /* The DOS debug overlay is unsupported. */
-void ImPlayers_Debug(imuse_t* im) {}
+void ImPlayers_Debug(imuse_t* im) { (void)im; }
