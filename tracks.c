@@ -422,7 +422,7 @@ ImWaveTrack* ImTracks_GetFreeTrack(imuse_t* im, int priority) {
 		if (!im->tracks.pool[i].soundId)
 			return &im->tracks.pool[i];
 
-	ImDebug_LogMsg(im, "ERR: no spare tracks, will try to preempt...");
+	ImDebug_LogTrace(im, "ERR: no spare tracks, will try to preempt...");
 
 	/* Preempt the lowest-priority live track. '<=' picks the
 	 * LIFO-latest on ties — same as ImPlayers_GetFreePlayer. */
